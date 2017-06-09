@@ -1,5 +1,7 @@
 # Diffie-Hellman Key Exchange Algorithm
 
+![](https://github.com/barend-erasmus/diffie-hellman-key-exchange-algorithm/raw/master/images/iffie-hellman-key-exchange-algorithm.png)
+
 ```javascript
 
 const p = findNthPrimeNumber(26);
