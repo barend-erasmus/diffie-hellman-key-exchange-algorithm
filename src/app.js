@@ -1,9 +1,9 @@
-function findNthPrimativeRoot(n, p) {
+function findNthPrimitiveRoot(n, p) {
 
-    var cnt = 0;
+    let cnt = 0;
 
-    for (var i = 0; i < p; i++) {
-        if (isPrimativeRoot(i, p)) {
+    for (let i = 0; i < p; i++) {
+        if (isPrimitiveRoot(i, p)) {
             cnt++;
         }
 
@@ -15,11 +15,11 @@ function findNthPrimativeRoot(n, p) {
     return -1;
 }
 
-function isPrimativeRoot(a, p) {
-    var arr = [];
+function isPrimitiveRoot(a, p) {
+    const arr = [];
 
-    for (var i = 1; i <= p - 1; i++) {
-        var value = Math.pow(a, i) % p;
+    for (let i = 1; i <= p - 1; i++) {
+        const value = Math.pow(a, i) % p;
 
 
         if (value >= p) {
@@ -60,7 +60,7 @@ function findNthPrimeNumber(n) {
 
 function isPrime(num) {
     if (num < 2) return false;
-    for (var i = 2; i < num; i++) {
+    for (let i = 2; i < num; i++) {
         if (num % i == 0)
             return false;
     }
@@ -68,18 +68,16 @@ function isPrime(num) {
 }
 
 
-var p = findNthPrimeNumber(26);
-var a = findNthPrimativeRoot(2, p);
+const p = findNthPrimeNumber(26);
+const a = findNthPrimitiveRoot(2, p);
 
-var alicePrivateNumber = 5;
-var aliceResult = Math.pow(a, alicePrivateNumber) % p;
+const alicePrivateNumber = 5;
+const aliceResult = Math.pow(a, alicePrivateNumber) % p;
 
+const bobPrivateNumber = 9;
+const bobResult = Math.pow(a, bobPrivateNumber) % p;
 
-var bobPrivateNumber = 9;
-var bobResult = Math.pow(a, bobPrivateNumber) % p;
-
-
-var sAlice = Math.pow(aliceResult, bobPrivateNumber) % p;
-var sBob = Math.pow(bobResult, alicePrivateNumber) % p;
+const sBob = Math.pow(aliceResult, bobPrivateNumber) % p;
+const sAlice = Math.pow(bobResult, alicePrivateNumber) % p;
 
 console.log(sAlice + ' - ' + sBob);
